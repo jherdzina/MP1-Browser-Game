@@ -1,0 +1,23 @@
+{
+  "name": "mp1-browser-game",
+  "version": "1.0.0",
+  "description": "//Scope //Game: Song Quiz Mock-up",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "http-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jherdzina/MP1-Browser-Game.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jherdzina/MP1-Browser-Game/issues"
+  },
+  "homepage": "https://github.com/jherdzina/MP1-Browser-Game#readme",
+  "devDependencies": {
+    "http-server": "^14.1.0"
+  }
+}
