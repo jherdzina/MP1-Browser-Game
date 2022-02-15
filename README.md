@@ -5,10 +5,15 @@
 //Scope
 //Game: Song Quiz Mock-up
 
+//Priority/where to start:
+//1.build HTML layout
+
 //MPV: 
 //2 player, players will alternate taking turns guessing title & artist from song clip that is played
 //Will need box with submit button for player to type answer - 2 boxes, 1 for title, 1 for artist
 //Get point for each correct answer and get bonus point is both answers (title & artist) are correct
+
+//******instructors strongly suggested starting with multiple choice and then move to type box w/ regex for stretch goal
 
 //Use Regex to parse through player answers so that it is not case sensitive, apostrophes, commas etc - only pay attention to word characters
 //store song data example: 
@@ -37,3 +42,4 @@ var tswiftSong = {
 //adding playabilty for more 3 or more players
 //add different modes: easy/hard: longer vs shorter clips
 //bonus points for correct answer streak
+//regex - type box
