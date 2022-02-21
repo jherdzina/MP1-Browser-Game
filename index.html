@@ -9,35 +9,41 @@
     <script src="index.js"></script>
 </head>
 <body>
-    <!--make button to start game-->
-    <button id="start">Start Game!</button>
-
-    <!--make button that plays audio file-->
-    <button id="play-song">Play Song!</button>
-    <!--make button that allows user to repeat audio file-->
-    <button id="repeat-song">Repeat Clip</button>
-
-    <!--make main container to hold both artist name & song name buttons-->
     <div class="main-container">
-
-         <!--make container for artist names nested in main container-->
-        <div class="artist-container">
-            <button id="artist-choice-1">Artist Choice 1</button>
-            <button id="artist-choice-2">Artist Choice 2</button>
-            <button id="artist-choice-3">Artist Choice 3</button>
-            <button id="artist-choice-4">Artist Choice 4</button>
+        <div>
+            <h1>Let's Play Song Quiz!</h1>
         </div>
+        <!--make button to start game-->
+        <button id="start">Start Game!</button>
 
-        <!--make container for song names nested in main container-->
-        <div class="song-container">
-            <button id="song-choice-1">Song Choice 1</button>
-            <button id="song-choice-2">Song Choice 2</button>
-            <button id="song-choice-3">Song Choice 3</button>
-            <button id="song-choice-4">Song Choice 4</button>
+        <!--make button that plays audio file-->
+        <div class="song-controls">
+            <button id="play-song">Play Song!</button>
+            <!--make button that allows user to repeat audio file-->
+            <button id="repeat-song">Repeat Clip</button>
         </div>
+        <!--make main container to hold both artist name & song name buttons-->
+        <div class="choices-container">
+
+            <!--make container for artist names nested in main container-->
+            <div class="artist-container">
+                <button id="artist-choice-1" onclick="changeArtistGuess(this)">Artist Choice 1</button>
+                <button id="artist-choice-2" onclick="changeArtistGuess(this)">Artist Choice 2</button>
+                <button id="artist-choice-3" onclick="changeArtistGuess(this)">Artist Choice 3</button>
+                <button id="artist-choice-4" onclick="changeArtistGuess(this)">Artist Choice 4</button>
+            </div>
+
+            <!--make container for song names nested in main container-->
+            <div class="song-container">
+                <button id="song-choice-1" onclick="changeSongGuess(this)">Song Choice 1</button>
+                <button id="song-choice-2" onclick="changeSongGuess(this)">Song Choice 2</button>
+                <button id="song-choice-3" onclick="changeSongGuess(this)">Song Choice 3</button>
+                <button id="song-choice-4" onclick="changeSongGuess(this)">Song Choice 4</button>
+            </div>
 
 
 
+        </div>
     </div>
 
 <!--after adding starter js-->
@@ -47,7 +53,8 @@
     
 
     <!--make submit button-->
-    <button id="submit">Submit</button>
+    <button id="submit" onclick="submitAnswer(this)">Submit</button>
+    <p id=message-box></p>
     
 </body>
 </html>

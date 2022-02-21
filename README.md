@@ -13,9 +13,9 @@
 //Will need box with submit button for player to type answer - 2 boxes, 1 for title, 1 for artist
 //Get point for each correct answer and get bonus point is both answers (title & artist) are correct
 
-//******instructors strongly suggested starting with multiple choice and then move to type box w/ regex for stretch goal
+//**instructors strongly suggested starting with multiple choice and then move to type box w/ regex for stretch goal
 
-//Use Regex to parse through player answers so that it is not case sensitive, apostrophes, commas etc - only pay attention to word characters
+
 //store song data example: 
 var tswiftSong = {
     "song name": "exile",
@@ -43,3 +43,4 @@ var tswiftSong = {
 //add different modes: easy/hard: longer vs shorter clips
 //bonus points for correct answer streak
 //regex - type box
+//Use Regex to parse through player answers so that it is not case sensitive, apostrophes, commas etc - only pay attention to word characters

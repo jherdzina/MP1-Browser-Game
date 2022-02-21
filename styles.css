@@ -1,5 +1,54 @@
 
 
 body {
-    background-color: #B2FF9E;
+    background-color: #9E0059;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    padding: 1px;
+}
+
+.song-controls {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+}
+
+h1 {
+    font-size: 3em;
+    text-align: center;
+    color: #FF5400;
+    border: dotted;
+    border-color: #FFBD00;
+}
+
+
+.choices-container {
+    display: flex;
+    
+    
+
+}
+
+.artist-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.song-container {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+#message-box {
+    color: whitesmoke;
+}
+
+#start {
+    background-color: #ff6b6c;
+    color: whitesmoke;
+    font-size: 25px;
 }
