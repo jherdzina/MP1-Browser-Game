@@ -2,6 +2,7 @@
 
 body {
     background-color: #9E0059;
+    border: whitesmoke dotted 15px;
 }
 
 .main-container {
@@ -12,35 +13,58 @@ body {
 
 .song-controls {
     display: flex;
+    justify-content: center;
     flex-direction: row;
     text-align: center;
+}
+.song-controls button {
+    margin: 5px 40px;
+    padding: 10px 40px;
+    background-color: #f04e31;
+    color: whitesmoke;
+    font-weight: bold;
 }
 
 h1 {
     font-size: 3em;
     text-align: center;
     color: #FF5400;
-    border: dotted;
-    border-color: #FFBD00;
+    
+
 }
 
 
 .choices-container {
     display: flex;
-    
-    
+    justify-content: center;
+}
 
+.choices-container button {
+    margin: 5px 0px;
+    padding: 10px;
+    background-color: #FFBD00;
+    color: black;
+    font-weight:bold;
 }
 
 .artist-container {
     display: flex;
+    justify-content: center;
     flex-direction: column;
+    text-align: center;
+    flex-grow: 1;
+    max-width: 500px;
+    margin: 0px 5px;
 }
 
 .song-container {
     display: flex;
+    justify-content: center;
     flex-direction: column;
-    
+    text-align: center;
+    flex-grow: 1;
+    max-width: 500px;
+    margin: 0px 5px;
 }
 
 #message-box {
@@ -48,7 +72,17 @@ h1 {
 }
 
 #start {
-    background-color: #ff6b6c;
+    background-color: #390099;
     color: whitesmoke;
     font-size: 25px;
+    display: flex;
+    justify-content: center;
+}
+
+#submit {
+    margin: 5px 40px;
+    padding: 10px 40px;
+    background-color: #f04e31;
+    color: whitesmoke;
+    font-weight: bold;
 }

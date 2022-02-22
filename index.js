@@ -1,7 +1,8 @@
 //define player variables
+var player1Turn = true;
 
 var player1 = {
-    "points": 0
+    "points": 0,
 };
 
 var player2 = {
@@ -40,19 +41,9 @@ var playerSongGuess = "";
 
 //link data for artist name buttons
 
-
-
-
-
-
 //var audio = new Audio('audio_file.mp3'); (referenced from stackoverflow)
 //audio.play();
 //document.getElementById('yourAudioTag').play();
-
-
-
-
-
 
 function changeArtistGuess(element) {
     playerArtistGuess = element.innerText
@@ -71,18 +62,33 @@ function sleep(ms) {
 }
 
 async function submitAnswer() {
+    var pointsReceived = 0;
     if (playerArtistGuess === songAnswer && playerSongGuess === songAnswer) {
         document.querySelector('#message-box').innerText = "Great Job, You Got Both Answers Correct!"
+        pointsReceived = 2;
     } else if (playerArtistGuess === songAnswer) {
         document.querySelector('#message-box').innerText = "Great Job, You Got The Artist Name Correct!"
+        pointsReceived = 1;
     } else if (playerSongGuess === songAnswer) {
         document.querySelector('#message-box').innerText = "Great Job, You Got The Song Title Correct!"
+        pointsReceived = 1;
     } else {
         document.querySelector('#message-box').innerText = "Sorry, That's Incorrect."
     }
 
     await sleep(5000)
     document.querySelector('#message-box').innerText = ""
+
+    
+    if (player1Turn) {
+        player1.points = pointsReceived;
+        //if it is player 1's turn, make it not player 1's turn (make it player 2's turn)
+        player1Turn = false;
+    } else {
+        player2.points = pointsReceived
+        player1Turn = true;
+
+    }
 
     console.log('Player guess is ' + playerArtistGuess + ' ' + playerSongGuess)
 

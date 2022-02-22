@@ -15,46 +15,42 @@
         </div>
         <!--make button to start game-->
         <button id="start">Start Game!</button>
-
         <!--make button that plays audio file-->
+           
         <div class="song-controls">
             <button id="play-song">Play Song!</button>
             <!--make button that allows user to repeat audio file-->
             <button id="repeat-song">Repeat Clip</button>
         </div>
+        
         <!--make main container to hold both artist name & song name buttons-->
         <div class="choices-container">
-
             <!--make container for artist names nested in main container-->
-            <div class="artist-container">
+            <span class="artist-container">
                 <button id="artist-choice-1" onclick="changeArtistGuess(this)">Artist Choice 1</button>
                 <button id="artist-choice-2" onclick="changeArtistGuess(this)">Artist Choice 2</button>
                 <button id="artist-choice-3" onclick="changeArtistGuess(this)">Artist Choice 3</button>
                 <button id="artist-choice-4" onclick="changeArtistGuess(this)">Artist Choice 4</button>
-            </div>
+            </span>
 
             <!--make container for song names nested in main container-->
-            <div class="song-container">
+            <span class="song-container">
                 <button id="song-choice-1" onclick="changeSongGuess(this)">Song Choice 1</button>
                 <button id="song-choice-2" onclick="changeSongGuess(this)">Song Choice 2</button>
                 <button id="song-choice-3" onclick="changeSongGuess(this)">Song Choice 3</button>
                 <button id="song-choice-4" onclick="changeSongGuess(this)">Song Choice 4</button>
-            </div>
-
-
-
+            </span>
         </div>
     </div>
 
 <!--after adding starter js-->
 <!--make responsive w/ bootstrap/center & organize in CSS-->
 
-
-    
-
     <!--make submit button-->
-    <button id="submit" onclick="submitAnswer(this)">Submit</button>
-    <p id=message-box></p>
+    <center>
+        <button id="submit" onclick="submitAnswer(this)">Submit</button>
+        <p id=message-box></p>
+    </center>
     
 </body>
 </html>
