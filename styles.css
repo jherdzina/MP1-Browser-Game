@@ -26,13 +26,17 @@ body {
 }
 
 h1 {
-    font-size: 3em;
+    font-size: 4em;
     text-align: center;
     color: #FF5400;
+    font: bolder;
+    font-family: bradley hand;
 }
 
 h2 {
     color: whitesmoke;
+    font-weight: bold;
+    font-size: 2em;
 }
 
 
@@ -77,13 +81,17 @@ h2 {
     background-color: #390099;
     color: whitesmoke;
     font-size: 25px;
-    display: flex;
+    display: inline-block;
+    text-align: center;
     justify-content: center;
+    padding: 20px 100px;
+    margin: 3em 15em;
+    font-weight: bolder;
 }
 
 #submit {
-    margin: 5px 40px;
-    padding: 10px 40px;
+    margin: 50px 50px;
+    padding: 10px 50px;
     background-color: #f04e31;
     color: whitesmoke;
     font-weight: bold;
