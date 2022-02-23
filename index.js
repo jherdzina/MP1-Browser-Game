@@ -11,39 +11,71 @@ var player2 = {
 
 //define song variables
 var songIndex = 0;
-var songAnswer = {};
 
 //build artist & song data array using key value pairs
-
-var totalEclipseOfTheHeartSong = {
-    "song name": "Total Eclipse of the Heart",
-    "artist name": "Bonnie Tyler",
-    "song path": ".assets/songs/Total-Eclipse.mp4"
+var nocturne = {
+    "song name": "Nocturne in E flat major",
+    "artist name": "Frédéric Chopin",
+    "song path": "assets/songs/Nocturne in E flat major, Op. 9 no. 2.mp3"
 }
-var wannabeSong = {
-    "song name": "Wannabe",
-    "artist name": "Spice Girls",
-    "song path": ".assets/songs/Wannabe.mp4"
+var oboeConcerto = {
+    "song name": "Oboe Concerto in C",
+    "artist name": "Mozart",
+    "song path": "assets/songs/Oboe Concerto in C, K.314_271k - II. Andantino.mp3"
 }
-
-var believeSong = {
-    "song name": "Believe",
-    "artist name": "Cher",
-    "song path": ".assets/songs/Believe.mp4"
+var pianoSonata = {
+    "song name": "Piano Sonata no. 14 in C# minor",
+    "artist name": "Beethoven",
+    "song path": "assets/songs/Piano Sonata no. 14 in C#m 'Moonlight', Op. 27 no. 2 - I. Adagio sostenuto.mp3"
 }
-
-var songs = [totalEclipseOfTheHeartSong, wannabeSong, believeSong];
+var violinConcerto = {
+    "song name": "Violin Concerto in F minor",
+    "artist name": "Antonio Vivaldi",
+    "song path": "assets/songs/Violin Concerto in F minor, RV 297 'Winter' - I. Allegro non molto.mp3"
+}
+var songAnswer = {};
+var songs = [nocturne, oboeConcerto, pianoSonata, violinConcerto];
 
 var playerArtistGuess = "";
 var playerSongGuess = "";
 
+
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
 //add text to HTML buttons
 
 //link data for artist name buttons
+function nextSong() {
+    songAnswer = songs[Math.floor(Math.random()*songs.length)];
+    var songAnswerOptions = [songAnswer];
+    var duplicateFound = null;
+    for (let i=0; i<songs.length; i++) {
+        for (let n=0; n<songAnswerOptions.length; n++) {
+            if (songs[i] === songAnswerOptions[n]) {
+                duplicateFound = true;
+            }
+        }
+        if (!duplicateFound) {
+            songAnswerOptions.splice(0, 0, songs[i])
+        }
+    }
+    console.log(songAnswerOptions)
+}
+nextSong()
+//math.random to select the song to play on song player, then make that song assigned as the correct answer for the key value pair. 
+//will need to populate guess buttons with key value pairs for answers for correct answer (both song & artist) and incorrect answers
+//remaining buttons in random order
 
-//var audio = new Audio('audio_file.mp3'); (referenced from stackoverflow)
-//audio.play();
-//document.getElementById('yourAudioTag').play();
+
+async function playAudio() {
+    var audio = new Audio(songAnswer["song path"]);
+    audio.duration = 5;
+    audio.play();
+    await sleep(15000);
+    audio.pause();
+    //document.getElementById('yourAudioTag').play();
+}
 
 function changeArtistGuess(element) {
     playerArtistGuess = element.innerText
@@ -55,10 +87,6 @@ function changeSongGuess(element) {
     playerSongGuess = element.innerText
     console.log(element.innerText)
     //if player wants to change their guess before hitting submit button, already linked in html
-}
-
-function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 async function submitAnswer() {

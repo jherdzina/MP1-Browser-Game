@@ -18,7 +18,7 @@
         <!--make button that plays audio file-->
            
         <div class="song-controls">
-            <button id="play-song">Play Song!</button>
+            <button id="play-song" onclick="playAudio()">Play Song!</button>
             <!--make button that allows user to repeat audio file-->
             <button id="repeat-song">Repeat Clip</button>
         </div>
@@ -27,6 +27,7 @@
         <div class="choices-container">
             <!--make container for artist names nested in main container-->
             <span class="artist-container">
+                <h2>Artist Name</h2>
                 <button id="artist-choice-1" onclick="changeArtistGuess(this)">Artist Choice 1</button>
                 <button id="artist-choice-2" onclick="changeArtistGuess(this)">Artist Choice 2</button>
                 <button id="artist-choice-3" onclick="changeArtistGuess(this)">Artist Choice 3</button>
@@ -35,6 +36,7 @@
 
             <!--make container for song names nested in main container-->
             <span class="song-container">
+                <h2>Song Name</h2>
                 <button id="song-choice-1" onclick="changeSongGuess(this)">Song Choice 1</button>
                 <button id="song-choice-2" onclick="changeSongGuess(this)">Song Choice 2</button>
                 <button id="song-choice-3" onclick="changeSongGuess(this)">Song Choice 3</button>
