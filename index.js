@@ -56,11 +56,15 @@ function nextSong() {
                 duplicateFound = true;
             }
         }
+        //random int in splice not working, changed to 0 to test, trying to make select random artist to add to guess options
         if (!duplicateFound) {
-            songAnswerOptions.splice(0, 0, songs[i])
+            songAnswerOptions.splice(Math.floor(Math.random()*songAnswerOptions.length, 0, songs[i]))
         }
     }
     console.log(songAnswerOptions)
+
+    //add functionality to access buttons by id and set .innerText equal to each key value pair index in song array
+
 }
 nextSong()
 //math.random to select the song to play on song player, then make that song assigned as the correct answer for the key value pair. 
@@ -120,9 +124,8 @@ async function submitAnswer() {
 
     console.log('Player guess is ' + playerArtistGuess + ' ' + playerSongGuess)
 
-    //TODO: after you click submit, submits answer, checks for true/false and then switches to next player/refreshes data for new turn + tallies score variables
-    
-    //submit button is already linked in html
+    //TODO: after you click submit, submits answer, checks for true/false and then switches to next player/refreshes data for new turn 
+    //+ tallies score variables
 }
 
 
