@@ -70,6 +70,58 @@ h2 {
     margin: 0px 5px;
 }
 
+#artist-choice-1:hover {
+    background-color: #deff0a;
+}
+#artist-choice-2:hover {
+    background-color: #deff0a;
+}
+#artist-choice-3:hover {
+    background-color: #deff0a;
+}
+#artist-choice-4:hover {
+    background-color: #deff0a;
+}
+
+#song-choice-1:hover {
+    background-color: #deff0a;
+}
+#song-choice-2:hover {
+    background-color: #deff0a;
+}
+#song-choice-3:hover {
+    background-color: #deff0a;
+}
+#song-choice-4:hover {
+    background-color: #deff0a;
+}
+
+#artist-choice-1:focus {
+    background-color: #deff0a;
+}
+#artist-choice-2:focus {
+    background-color: #deff0a;
+}
+#artist-choice-3:focus {
+    background-color: #deff0a;
+}
+#artist-choice-4:focus {
+    background-color: #deff0a;
+}
+
+#song-choice-1:focus {
+    background-color: #deff0a;
+}
+#song-choice-2:focus {
+    background-color: #deff0a;
+}
+#song-choice-3:focus {
+    background-color: #deff0a;
+}
+#song-choice-4:focus {
+    background-color: #deff0a;
+}
+
 .song-container {
     display: flex;
     justify-content: center;
