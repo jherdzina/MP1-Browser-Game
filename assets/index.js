@@ -18,29 +18,28 @@ var songIndex = 0;
 var nocturne = {
     "song name": "Nocturne in E flat major",
     "artist name": "Frédéric Chopin",
-    "song path": "assets/songs/Nocturne in E flat major, Op. 9 no. 2.mp3"
+    "song path": "assets/songs/Nocturne.mp3"
 }
 var oboeConcerto = {
     "song name": "Oboe Concerto in C",
     "artist name": "Mozart",
-    "song path": "assets/songs/Oboe Concerto in C, K.314_271k - II. Andantino.mp3"
+    "song path": "assets/songs/Oboe Concerto.mp3"
 }
 var pianoSonata = {
     "song name": "Piano Sonata no. 14 in C# minor",
     "artist name": "Beethoven",
-    "song path": "assets/songs/Piano Sonata no. 14 in C#m 'Moonlight', Op. 27 no. 2 - I. Adagio sostenuto.mp3"
+    "song path": "assets/songs/Piano Sonata.mp3"
 }
 var violinConcerto = {
     "song name": "Violin Concerto in F minor",
     "artist name": "Antonio Vivaldi",
-    "song path": "assets/songs/Violin Concerto in F minor, RV 297 'Winter' - I. Allegro non molto.mp3"
+    "song path": "assets/songs/Violin Concerto.mp3"
 }
 var songAnswer = {};
 var songs = [nocturne, oboeConcerto, pianoSonata, violinConcerto];
-
 var playerArtistGuess = "";
 var playerSongGuess = "";
-
+var audio = new Audio(songAnswer["song path"]);
 
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
@@ -49,8 +48,10 @@ function sleep(ms) {
 
 //link data for artist name buttons
 function nextSong() {
-    let songExtras = songs
+    let songExtras = [...songs]
     let songAnswerIndex = Math.floor(Math.random()*songExtras.length)
+    console.log(songs)
+    console.log(songExtras)
     songAnswer = songExtras[songAnswerIndex];
     songExtras.splice(songAnswerIndex, 1)
     let incorrectAnswerIndex1 = Math.floor(Math.random()*songExtras.length)
@@ -75,7 +76,7 @@ function nextSong() {
             songAnswerOptions.splice(Math.floor(Math.random()*songAnswerOptions.length, 0, songs[i]))
         }
     }
-    //TODO: need to update to randomize which answer appears in each box
+    
     document.querySelector('#artist-choice-1').innerText = incorrectAnswer1["artist name"];
     document.querySelector('#artist-choice-2').innerText = incorrectAnswer2["artist name"];
     document.querySelector('#artist-choice-3').innerText = songAnswer["artist name"];
@@ -85,75 +86,68 @@ function nextSong() {
     document.querySelector('#song-choice-2').innerText = songAnswer["song name"];
     document.querySelector('#song-choice-3').innerText = incorrectAnswer2["song name"];
     document.querySelector('#song-choice-4').innerText = incorrectAnswer3["song name"];
-    
-    //add functionality to access buttons by id and set .innerText equal to each key value pair index in song array
 }
-nextSong()
-//math.random to select the song to play on song player, then make that song assigned as the correct answer for the key value pair. 
-//will need to populate guess buttons with key value pairs for answers for correct answer (both song & artist) and incorrect answers
-//remaining buttons in random order
-
 
 async function playAudio() {
-    var audio = new Audio(songAnswer["song path"]);
+    audio.src = songAnswer["song path"]
     audio.duration = 5;
+    console.log(audio.src)
     audio.play();
     await sleep(15000);
     audio.pause();
-    //document.getElementById('yourAudioTag').play();
 }
 
-function stopAudio() {
-
+function pauseAudio() {
+    audio.pause();
 }
 
 function changeArtistGuess(element) {
     playerArtistGuess = element.innerText
     console.log(element)
-    //if player wants to change their guess before hitting submit button, already linked in html
 }
 
 function changeSongGuess(element) {
     playerSongGuess = element.innerText
-    //console.log(element.innerText)
-    //if player wants to change their guess before hitting submit button, already linked in html
 }
 
 async function submitAnswer() {
+    console.log(playerSongGuess)
+    console.log(playerArtistGuess)
+    console.log(songAnswer)
     var pointsReceived = 0;
-    if (playerArtistGuess === songAnswer && playerSongGuess === songAnswer) {
+    if (playerArtistGuess.includes(songAnswer["artist name"]) && playerSongGuess.includes(songAnswer["song name"])) {
         document.querySelector('#message-box').innerText = "Great Job, You Got Both Answers Correct!"
         pointsReceived = 2;
-    } else if (playerArtistGuess === songAnswer) {
+    } else if (playerArtistGuess.includes(songAnswer["artist name"])) {
         document.querySelector('#message-box').innerText = "Great Job, You Got The Artist Name Correct!"
         pointsReceived = 1;
-    } else if (playerSongGuess === songAnswer) {
+    } else if (playerSongGuess.includes(songAnswer["song name"])) {
         document.querySelector('#message-box').innerText = "Great Job, You Got The Song Title Correct!"
         pointsReceived = 1;
     } else {
         document.querySelector('#message-box').innerText = "Sorry, That's Incorrect."
     }
-
     await sleep(5000)
+    audio.pause()
     document.querySelector('#message-box').innerText = ""
 
     
     if (player1Turn) {
-        player1.points = pointsReceived;
+        player1.points += pointsReceived;
+        document.querySelector('#player-turn').innerText = "IT'S YOUR TURN - PLAYER 2!"
         //if it is player 1's turn, make it not player 1's turn (make it player 2's turn)
         player1Turn = false;
     } else {
-        player2.points = pointsReceived
+        player2.points += pointsReceived
+        document.querySelector('#player-turn').innerText = "IT'S YOUR TURN - PLAYER 1!"  
         player1Turn = true;
 
     }
+    document.querySelector('#player1-score').innerText = `PLAYER 1 SCORE: ${player1.points}`
+    document.querySelector('#player2-score').innerText = `PLAYER 2 SCORE: ${player2.points}`
 
-    console.log('Player guess is ' + playerArtistGuess + ' ' + playerSongGuess)
-
-    //TODO: after you click submit, submits answer, checks for true/false and then switches to next player/refreshes data for new turn 
-    //+ tallies score variables
     nextSong();
 }
 
-
+nextSong()
 

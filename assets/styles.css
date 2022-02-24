@@ -10,7 +10,14 @@ body {
     flex-direction: column;
     padding: 1px;
 }
-
+#player-turn {
+    display: flex;
+    justify-content: center;
+    color: whitesmoke;
+    font-size: 2.5em;
+    font-weight: bold;
+    margin: 20px 0px;
+}
 .song-controls {
     display: flex;
     justify-content: center;
@@ -20,7 +27,7 @@ body {
 .song-controls button {
     margin: 5px 40px;
     padding: 10px 40px;
-    background-color: #f04e31;
+    background-color: #d704b2;
     color: whitesmoke;
     font-weight: bold;
 }
@@ -28,7 +35,7 @@ body {
 h1 {
     font-size: 4em;
     text-align: center;
-    color: #FF5400;
+    color: #f04e31;
     font: bolder;
     font-family: bradley hand;
 }
@@ -77,22 +84,31 @@ h2 {
     color: whitesmoke;
 }
 
-#start {
-    background-color: #390099;
-    color: whitesmoke;
-    font-size: 25px;
-    display: inline-block;
-    text-align: center;
-    justify-content: center;
-    padding: 20px 100px;
-    margin: 3em 15em;
-    font-weight: bolder;
-}
-
 #submit {
-    margin: 50px 50px;
+    margin: 30px 50px;
     padding: 10px 50px;
-    background-color: #f04e31;
+    background-color: #d704b2;
     color: whitesmoke;
     font-weight: bold;
+}
+
+.score-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    color: whitesmoke;
+    font-size: 20px;
+    margin: 25px 0px
+}
+
+#player1-score {
+    display: flex;
+    justify-content: center;
+    margin: 0px 7em;
+}
+
+#player2-score {
+    display: flex;
+    justify-content: center;
+    margin: 0px 7em;
 }
