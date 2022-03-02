@@ -7,10 +7,11 @@ MVP GOALS:
 * Multiple choice boxes: 4 for song, 4 for artist
 * Points awarded for correct artist/song (1 point each)
 
+
 INITIAL STRETCH GOALS: 
 
+* Add more songs/link API for more expansive song library
 * Time limit for player to answer, example: 30 secs
-* Ability to replay clip up to 2 add'l times
 * Song clip length approx 5 sec
 * Ability to pass/skip turn if player does not know the answer/does not want to guess
 

@@ -14,7 +14,8 @@ var player2 = {
 //define song variables
 var songIndex = 0;
 
-//build artist & song data array using key value pairs
+
+//song files sourced from: https://musopen.org/music/
 var nocturne = {
     "song name": "Nocturne in E flat major",
     "artist name": "Frédéric Chopin",
@@ -88,6 +89,8 @@ function nextSong() {
     document.querySelector('#song-choice-4').innerText = incorrectAnswer3["song name"];
 }
 
+//From StackOverFlow: https://stackoverflow.com/questions/9419263/how-to-play-audio
+//used answer to figure out how to play audio files
 async function playAudio() {
     audio.src = songAnswer["song path"]
     audio.duration = 5;
